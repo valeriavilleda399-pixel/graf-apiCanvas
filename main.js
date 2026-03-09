@@ -13,13 +13,12 @@ function draw() {
 
         // --- DESCOMENTA SOLO UNA SECCIÓN A LA VEZ PARA TUS EVIDENCIAS ---
 
-        // 1. RECTÁNGULO (Ejemplo inicial + variaciones) [cite: 41]
-        /*
+      
         ctx.fillStyle = "green"; [cite: 29]
         ctx.fillRect(50, 50, 150, 100); 
         ctx.strokeStyle = "black";
         ctx.strokeRect(250, 50, 150, 100);
-        */
+       
 
         // 2. TRIÁNGULO [cite: 42]
         /*
