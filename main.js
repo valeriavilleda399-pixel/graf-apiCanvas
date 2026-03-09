@@ -1,106 +1,59 @@
-/**
- * Práctica: 2.2 Introducción a la graficación 2D
- * Alumna: Valeria Abigail Villeda Hernandez
- */
-
+// Esta función dibuja cada figura en su respectivo canvas
 function draw() {
-    var canvas = document.getElementById("canvas");
-    if (canvas.getContext) {
-        var ctx = canvas.getContext("2d"); 
+    // 1. Rectángulo [cite: 41]
+    const ctx1 = document.getElementById('canv1').getContext('2d');
+    ctx1.fillStyle = "green";
+    ctx1.fillRect(50, 50, 100, 100);
 
-        // Limpiar el canvas antes de dibujar cada nueva evidencia
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // 2. Triángulo [cite: 42]
+    const ctx2 = document.getElementById('canv2').getContext('2d');
+    ctx2.beginPath();
+    ctx2.moveTo(100, 50);
+    ctx2.lineTo(150, 150);
+    ctx2.lineTo(50, 150);
+    ctx2.closePath();
+    ctx2.stroke();
 
-        // --- DESCOMENTA SOLO UNA SECCIÓN A LA VEZ PARA TUS EVIDENCIAS ---
+    // 3. Happy Face [cite: 43]
+    const ctx3 = document.getElementById('canv3').getContext('2d');
+    ctx3.beginPath();
+    ctx3.arc(100, 100, 75, 0, Math.PI * 2); // Cara
+    ctx3.moveTo(140, 110);
+    ctx3.arc(100, 110, 40, 0, Math.PI, false); // Boca
+    ctx3.moveTo(85, 80);
+    ctx3.arc(80, 80, 5, 0, Math.PI * 2); // Ojo izq
+    ctx3.moveTo(125, 80);
+    ctx3.arc(120, 80, 5, 0, Math.PI * 2); // Ojo der
+    ctx3.stroke();
 
-      
-        ctx.fillStyle = "green";
-        ctx.fillRect(50, 50, 150, 100); 
-        ctx.strokeStyle = "black";
-        ctx.strokeRect(250, 50, 150, 100);
-       
+    // 4. Líneas [cite: 44]
+    const ctx4 = document.getElementById('canv4').getContext('2d');
+    ctx4.beginPath();
+    ctx4.moveTo(20, 20);
+    ctx4.lineTo(180, 180);
+    ctx4.stroke();
 
-        // 2. TRIÁNGULO [cite: 42]
-        /*
-        ctx.beginPath();
-        ctx.moveTo(100, 300);
-        ctx.lineTo(200, 300);
-        ctx.lineTo(150, 200);
-        ctx.closePath();
-        ctx.fillStyle = "orange";
-        ctx.fill();
-        ctx.stroke();
-        */
+    // 5. Arcos [cite: 45]
+    const ctx5 = document.getElementById('canv5').getContext('2d');
+    ctx5.beginPath();
+    ctx5.arc(100, 100, 50, 0, Math.PI, true);
+    ctx5.stroke();
 
-        // 3. HAPPY FACE (Carita feliz) [cite: 43]
-        /*
-        ctx.beginPath();
-        ctx.arc(300, 200, 100, 0, Math.PI * 2, true); // Cara
-        ctx.moveTo(370, 200);
-        ctx.arc(300, 200, 70, 0, Math.PI, false);    // Boca
-        ctx.moveTo(265, 170);
-        ctx.arc(260, 170, 5, 0, Math.PI * 2, true);  // Ojo izquierdo
-        ctx.moveTo(345, 170);
-        ctx.arc(340, 170, 5, 0, Math.PI * 2, true);  // Ojo derecho
-        ctx.stroke();
-        */
+    // 6. Curvas Bézier y cuadráticas [cite: 47]
+    const ctx6 = document.getElementById('canv6').getContext('2d');
+    ctx6.beginPath();
+    ctx6.moveTo(20, 100);
+    ctx6.quadraticCurveTo(100, 20, 180, 100);
+    ctx6.stroke();
 
-        // 4. LÍNEAS [cite: 44]
-        /*
-        ctx.beginPath();
-        ctx.lineWidth = 10;
-        ctx.lineCap = "round";
-        ctx.moveTo(50, 50);
-        ctx.lineTo(200, 350);
-        ctx.strokeStyle = "blue";
-        ctx.stroke();
-        */
-
-        // 5. ARCOS [cite: 45]
-        /*
-        for (var i = 0; i < 4; i++) {
-            ctx.beginPath();
-            var x = 100 + i * 120;
-            var y = 200;
-            var radius = 40;
-            var startAngle = 0;
-            var endAngle = Math.PI + (Math.PI * i) / 2;
-            ctx.arc(x, y, radius, startAngle, endAngle, i % 2 === 0);
-            ctx.stroke();
-        }
-        */
-
-        // 6. CURVAS BÉZIER Y CUADRÁTICAS [cite: 47]
-        /*
-        // Cuadrática (un punto de control)
-        ctx.beginPath();
-        ctx.moveTo(50, 200);
-        ctx.quadraticCurveTo(250, 50, 450, 200);
-        ctx.strokeStyle = "red";
-        ctx.stroke();
-
-        // Bézier (dos puntos de control)
-        ctx.beginPath();
-        ctx.moveTo(50, 300);
-        ctx.bezierCurveTo(150, 100, 350, 500, 550, 300);
-        ctx.strokeStyle = "purple";
-        ctx.stroke();
-        */
-
-        // 7. COMBINACIONES DE LÍNEAS Y FIGURAS [cite: 48]
-        /*
-        ctx.fillStyle = "yellow";
-        ctx.fillRect(200, 150, 200, 150); // Casa
-        ctx.beginPath();
-        ctx.moveTo(200, 150);
-        ctx.lineTo(300, 50);
-        ctx.lineTo(400, 150);
-        ctx.closePath();
-        ctx.fillStyle = "red";
-        ctx.fill(); // Techo
-        */
-    }
+    // 7. Combinaciones [cite: 48]
+    const ctx7 = document.getElementById('canv7').getContext('2d');
+    ctx7.fillStyle = "blue";
+    ctx7.fillRect(60, 100, 80, 50);
+    ctx7.beginPath();
+    ctx7.arc(100, 100, 40, 0, Math.PI, true);
+    ctx7.fill();
 }
 
-// Ejecutar la función al cargar la página
-window.onload = draw;
+// Ejecuta la función una vez que todo el HTML esté listo
+document.addEventListener("DOMContentLoaded", draw);
