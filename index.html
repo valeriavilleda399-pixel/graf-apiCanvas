@@ -2,13 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lienzo 2D - Ejemplos de Figuras</title>
+    <title>Práctica 2.2 - Valeria Villeda</title>
     <style>
-        canvas { border: 1px solid #000; background-color: #f0f0f0; }
+        body { font-family: sans-serif; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px; background: #eee; }
+        .box { background: white; padding: 10px; border: 1px solid #ccc; text-align: center; }
+        canvas { border: 1px solid #000; display: block; }
     </style>
 </head>
-<body onload="draw()">
-    <canvas id="canvas" width="800" height="600"></canvas>
+<body>
+    <div class="box"><h3>1. Rectángulo</h3><canvas id="canv1" width="200" height="200"></canvas></div>
+    <div class="box"><h3>2. Triángulo</h3><canvas id="canv2" width="200" height="200"></canvas></div>
+    <div class="box"><h3>3. Happy Face</h3><canvas id="canv3" width="200" height="200"></canvas></div>
+    <div class="box"><h3>4. Líneas</h3><canvas id="canv4" width="200" height="200"></canvas></div>
+    <div class="box"><h3>5. Arcos</h3><canvas id="canv5" width="200" height="200"></canvas></div>
+    <div class="box"><h3>6. Curvas</h3><canvas id="canv6" width="200" height="200"></canvas></div>
+    <div class="box"><h3>7. Combinado</h3><canvas id="canv7" width="200" height="200"></canvas></div>
+
     <script src="main.js"></script>
 </body>
 </html>
